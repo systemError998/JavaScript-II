@@ -4,9 +4,10 @@
   Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
 
+
 function strConcat(str1,str2) {
   str1 = str1.slice(0,2); //ci
-  str2 = str2.slice(-3)   //ndo
+  str2 = str2.slice(-3)   //ndo 
   // console.log(str1 , str2);
   // console.log(str1.concat(str2));
   console.log(str1.concat(str2).toUpperCase());
@@ -27,15 +28,20 @@ function arrayRandom () {
   console.log(randArr);
 }
 arrayRandom()
-
+console.log(randArr);
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 
-const arrayToEven = randArr.filter((numeriPari) => 
+/* const arrayToEven = randArr.filter((numeriPari) => 
   numeriPari % 2 === 0
-)
-console.log(arrayToEven);
+) */
+
+
+const arrayToEven = (randArr) => {
+  return randArr.filter(num => num % 2 === 0)
+}
+console.log(arrayToEven()); 
 
 
 /* ESERCIZIO 4 (forEach)
@@ -54,9 +60,8 @@ console.log(sumArr)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-const accumulatore = 0;
 const sumReduce = randArr.reduce(
-  (accumulatore, valoreIterato) => accumulatore + valoreIterato, 0 
+  (accumulatore, valoreIterato) => accumulatore + valoreIterato, 0 //valore iniziale che deve avere l'accumulatore
 )
 console.log(sumReduce);
 
@@ -259,23 +264,28 @@ console.log(movieTitle)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 
-function movie2000() {
-  
-}
 
-movies.filter((movie) => 
-    movie.Year > 2000 
-    console.log(movies)
-)
+function movie2000(arr) {
+  return arr.filter(film => film.Year >= 2000)
+}
+console.log(movie2000(movies))
+
 
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
 
+let sumYear = (arr) => {
+  return arr.reduce(acc, film) => acc + film.Year, 0
+}
+console.log(sumYear(movie));
+
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
+
+
 
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
