@@ -6,22 +6,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1> TO DO LIST BEFORE DIE </h1>
+        <div id="title">    
+            <h1> TO DO LIST </h1>
+        </div>
 
         <form>
             <input type="text" placeholder="Add something to list" required>
-            <button type="submit">ADD</button>
+            <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
         </form>
 
         <ul id="toDoList">
 
         </ul>
 
-
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script/script.js"></script>
 </body>
 </html>
