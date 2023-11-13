@@ -14,18 +14,16 @@ let addTodo = function(bottone) {
             if (input.value === taskEsistenti[i].innerText) {
                 alert("task già inserita")
                 listItem.remove()
-            }
+            } else {  }
         }
-        
         let cestina = document.createElement("button")  //creo bottone 
         listItem.appendChild(cestina)                   //lo appendo affianco al list item
         cestina.innerHTML = `<i class="fa-solid fa-trash"></i>` //Nome funzione del bottone
         cestina.addEventListener("click", () => {       //al click di cestina
-            confirm("Vuoi rimuovere la task?")          //chiedo con confirm se vuoi cancellare
-            listItem.remove()                           //cancello 
+            if (confirm("Vuoi rimuovere la task?")) {
+                listItem.remove() 
+            }  else { confirm.close() }        
         })
-        
-        console.log(taskEsistenti)
 
         listItem.addEventListener("click", () =>{       
             if (listItem.style.textDecoration === "line-through") {
@@ -41,6 +39,9 @@ let addTodo = function(bottone) {
 
 let button = document.querySelector("form button")
 button.addEventListener("click", addTodo)
+
+
+
 
 
 
